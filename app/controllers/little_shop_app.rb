@@ -4,8 +4,8 @@ class LittleShopApp < Sinatra::Base
 
 
   get '/' do
-    erb :dashboard
-  end 
+    erb :index
+  end
 
 
 
