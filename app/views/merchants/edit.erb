@@ -1,0 +1,9 @@
+<form action="/merchants/<%= @merchant.id %>" method="POST">
+  <p>Edit</p>
+  <input type="hidden" name="_method" value="PUT" />
+  <input type='number' name='merchant[merchant_id]' value="<%= @merchant.merchant_id %>"/><br/>
+  <input type='text' name='merchant[name]' value="<%= @merchant.name %>"/><br/>
+  <input type='date' name='merchant[created_at]' value="<%= @merchant.created_at %>"/><br/>
+  <input type='date' name='merchant[updated_at]' value="<%= @merchant.created_at %>"/><br/>
+  <input type='submit'/>
+</form>
