@@ -1,6 +1,12 @@
 
-<style>
-body {
-    background-color: black;
-}
-</style>
+  body {
+      background-color: black;
+  }
+ .nav{
+   background-color: lightgrey;
+   width: 100%;
+   border: 5px solid grey;
+   padding: 0;
+   margin: 0;
+   height: 80px;
+ }
