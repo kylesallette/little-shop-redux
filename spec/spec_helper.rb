@@ -1,4 +1,4 @@
-ENV["RACK_ENV"] ||= "test"
+ENV["RACK_ENV"] = "test"
 
 require File.expand_path("../../config/environment.rb", __FILE__)
 require 'rspec'
@@ -9,6 +9,9 @@ Capybara.app = LittleShopApp
 RSpec.configure do |c|
   c.include Capybara::DSL
 end
+
+require "bundler"
+Bundler.require(:default, :test)
 
 DatabaseCleaner.strategy= :truncation
 
