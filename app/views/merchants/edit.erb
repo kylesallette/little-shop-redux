@@ -1,10 +1,50 @@
-
-<form action="/merchants/<%= @merchant.id %>" method="POST">
-  <p>Edit</p>
-  <input type="hidden" name="_method" value="PUT" />
-  <input type='number' name='merchant[id]' value="<%= @merchant.id %>"/><br/>
-  <input type='text' name='merchant[name]' value="<%= @merchant.name %>"/><br/>
-  <input type='date' name='merchant[created_at]' value="<%= @merchant.created_at %>"/><br/>
-  <input type='date' name='merchant[updated_at]' value="<%= @merchant.created_at %>"/><br/>
-  <input type='submit'/>
-</form>
+<html>
+  <head>
+    <title>Little Shop Redux</title>
+    <link rel="stylesheet" href="/merchant.css"  type="text/css" />
+  </head>
+  <body>
+    <header>
+      <img src="https://i.imgur.com/ZyZhR2j.jpg" alt="banner" height="300px" width="100%">
+    </header>
+    <div class="nav">
+      <div class="navbar">
+        <a href="/">Home</a>
+        <div class="dropdown">
+          <button class="dropbtn">Merchants
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content">
+            <a href="/merchants/new">New</a>
+            <a href="/merchants/edit">Edit</a>
+            <a href="/merchants">Index</a>
+            <a href="/merchants/show_input">Show</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <button class="dropbtn">Items
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content">
+            <a href="#">New</a>
+            <a href="#">Edit</a>
+            <a href="#">Index</a>
+            <a href="#">Show</a>
+          </div>
+        </div>
+      </div>
+      <div class="edit">
+        <form action="/merchants/<%= @merchant.id %>" method="POST">
+          <p>Edit Merchant</p>
+          <input type="hidden" name="_method"  class="input" value="PUT" />
+          <input type='number' name='merchant[id]' style="width: 300px;" class="input" value="<%= @merchant.id %>"/><br/>
+          <input type='text' name='merchant[name]' class="input" style="width: 300px;" class="input" value="<%= @merchant.name %>"/><br/>
+          <input type='date' name='merchant[created_at]' class="input" style="width: 300px;" class="input" value="<%= @merchant.created_at %>"/><br/>
+          <input type='date' name='merchant[updated_at]' class="input" style="width: 300px;" class="input" value="<%= @merchant.created_at %>"/><br/>
+          <input type='submit'/>
+        </form>
+       </div>
+      <div class="footer">
+  </div>
+  </body>
+</html>
