@@ -14,7 +14,7 @@
           <button class="dropbtn">Merchants
             <i class="fa fa-caret-down"></i>
           </button>
-          <div class="dropdown-content">
+          <div class="dropdown-content" id="merchant-dropdown">
             <a href="/merchants/new">New</a>
             <a href="/merchants/edit_input">Edit</a>
             <a href="/merchants">Index</a>
@@ -36,11 +36,11 @@
       <div class="new">
         <form action="/merchants" method="POST">
           <p>Enter a new merchant:</p>
-          Enter merchant id: <input type="number" name="merchant[id]"/><br/>
-          Enter a merchant name: <input type="text" name="merchant[name]"/><br/>
+          Enter merchant id: <input id="number-box" type="number" name="merchant[id]"/><br/>
+          Enter a merchant name: <input id="text-box" type="text" name="merchant[name]"/><br/>
           <input type="hidden" name="merchant[created_at]" value="<%= Time.now %>"/>
           <input type="hidden" name="merchant[updated_at]" value="<%= Time.now %>"/>
-          <input type="submit"/>
+          <input id="submit-button" type="submit"/>
         </form>
       </div>
       <div class="footer">
