@@ -34,14 +34,11 @@
         </div>
       </div>
       <div class="new">
-        <form action="/merchants" method="POST">
-          <p>Enter a new merchant:</p>
-          Enter merchant id: <input type="number" name="merchant[id]"/><br/>
-          Enter a merchant name: <input type="text" name="merchant[name]"/><br/>
-          <input type="hidden" name="merchant[created_at]" value="<%= Time.now %>"/>
-          <input type="hidden" name="merchant[updated_at]" value="<%= Time.now %>"/>
-          <input type="submit"/>
-        </form>
+        <h3> Please enter merchant id you wish to edit </h3>
+        <form action="/merchants/edit/" method="get">
+        <input type="text" name="id"/>
+        <input type="submit" value="Search"/>
+    </form>
       </div>
       <div class="footer">
   </div>

@@ -7,6 +7,16 @@ class LittleShopApp < Sinatra::Base
     erb :"dashboard"
   end
 
+  get "/merchants/show_input" do
+    @merchants = Merchant.all
+    erb :"merchants/show_input"
+  end
+
+  get "/merchants/edit_input" do
+    @merchants = Merchant.all
+    erb :"merchants/edit_input"
+  end
+
   get "/merchants" do
     @merchants = Merchant.all
     erb :"merchants/index"
@@ -14,6 +24,11 @@ class LittleShopApp < Sinatra::Base
 
   get "/merchants/new" do
     erb :"merchants/new"
+  end
+
+  get "/merchants/" do
+    @merchant = Merchant.find(params[:id])
+    erb :"merchants/show"
   end
 
   get "/merchants/:id" do
@@ -27,7 +42,12 @@ class LittleShopApp < Sinatra::Base
     redirect "/merchants"
   end
 
-  get "/merchants/:id/edit" do
+  get "/merchants/edit/" do
+    @merchant = Merchant.find(params[:id])
+    erb :"merchants/edit"
+  end
+
+  get "/merchants/edit/:id" do
     @merchant = Merchant.find(params[:id])
     erb :"merchants/edit"
   end
