@@ -72,8 +72,9 @@ class LittleShopApp < Sinatra::Base
     redirect "/categories/#{params[:category][:name]}"
   end
 
-  delete "/categories/:name" do
-    Category.destroy(params[:category][:id])
+  delete "/categories/:name" do |name|
+    category = Category.find_by(name: name)
+    Category.destroy(category.id)
     redirect "/categories"
   end
 end
