@@ -16,3 +16,9 @@ x5. Write at least 4 tests (id, name, created_at, updated_at) to ensure merchant
 
 ITERATION 2:
 1. Add data to the database from our CSV using... tux? File?
+
+ITERATION 3:
+1. Create migration called "CreateCategories" to create category table with attributes
+2. Run rake db:create db:migrate db:seed ??
+3. Create Category Model ??
+4. Create REST controller paths for category along with a corresponding view

@@ -63,7 +63,38 @@ class LittleShopApp < Sinatra::Base
   end
 
   get "/categories" do
+    @categories = Category.all
     erb :"categories/index"
   end
 
+  get "/categories/new" do
+    erb :"categories/new"
+  end
+
+  get "/categories/:name" do
+    @category = Category.find_by(name: params[:name])
+    erb :"categories/show"
+  end
+
+  post "/categories" do
+    category = Category.new(params[:category])
+    category.save
+    redirect "/categories"
+  end
+
+  get "/categories/:name/edit" do
+    @category = Category.find_by(name: params[:name])
+    erb :"categories/edit"
+  end
+
+  put "/categories/:name" do
+    Category.update(params[:category][:id], params[:category])
+    redirect "/categories/#{params[:category][:name]}"
+  end
+
+  delete "/categories/:name" do |name|
+    category = Category.find_by(name: name)
+    Category.destroy(category.id)
+    redirect "/categories"
+  end
 end
