@@ -3,8 +3,8 @@ class LittleShopApp < Sinatra::Base
   set :method_override, true
 
 
-  get '/' do
-    erb :dashboard
+  get "/" do
+    erb :"dashboard"
   end
 
   get "/merchants" do
@@ -40,5 +40,9 @@ class LittleShopApp < Sinatra::Base
   delete "/merchants/:id" do |id|
     Merchant.destroy(id.to_i)
     redirect "/merchants"
+  end
+
+  get "/categories" do
+    erb :"categories/index"
   end
 end
