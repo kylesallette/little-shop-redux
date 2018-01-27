@@ -16,7 +16,7 @@
           </button>
           <div class="dropdown-content">
             <a href="/merchants/new">New</a>
-            <a href="/merchants/edit">Edit</a>
+            <a href="/merchants/edit_input">Edit</a>
             <a href="/merchants">Index</a>
             <a href="/merchants/show_input">Show</a>
           </div>
@@ -40,7 +40,7 @@
           <li>Merchant / <%= merchant.name %></li>
           <li>Created-at / <%= merchant.created_at %></li>
           <li>Updated-at / <%= merchant.updated_at %></li>
-          <a class='buttons' href="/merchants/<%= merchant.id  %>/edit">Edit</a>
+          <a class='buttons' href="/merchants/edit/<%= merchant.id  %>">Edit</a>
           <form action="/merchants/<%= merchant.id %>" method="post">
             <a class='buttons' href="/merchants/<%= merchant.id  %>">Delete</a>
             <form action="/merchants/<%= merchant.id %>" method="delete">
