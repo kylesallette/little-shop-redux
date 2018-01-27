@@ -1,13 +1,11 @@
 require 'csv'
 require_relative '../app/models/merchant.rb'
+require_relative '../app/models/category.rb'
 
-class Seeds
-  def self.from_csv(file_path)
-    data = CSV.open file_path, headers: true, header_converters: :symbol, converters: :numeric
-    data.each do |row|
-      Merchant.create(row.to_hash)
-    end
-  end
+CSV.foreach('data/merchants.csv', headers: true, header_converters: :symbol, converters: :numeric) do |row|
+  Merchant.create(row.to_hash)
 end
 
-Seeds.from_csv('data/merchants.csv')
+CSV.foreach('data/categories.csv', headers: true, header_converters: :symbol, converters: :numeric) do |row|
+  Category.create(row.to_hash)
+end
