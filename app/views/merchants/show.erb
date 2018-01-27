@@ -1,6 +1,47 @@
-<ul>
-  <li><%= @merchant.id %></li>
-  <li><%= @merchant.name %></li>
-  <li><%= @merchant.created_at %></li>
-  <li><%= @merchant.updated_at %></li>
-</ul>
+<html>
+  <head>
+    <title>Little Shop Redux</title>
+    <link rel="stylesheet" href="/merchant.css"  type="text/css" />
+  </head>
+  <body>
+    <header>
+      <img src="https://i.imgur.com/ZyZhR2j.jpg" alt="banner" height="300px" width="100%">
+    </header>
+    <div class="nav">
+      <div class="navbar">
+        <a href="/">Home</a>
+        <div class="dropdown">
+          <button class="dropbtn">Merchants
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content">
+            <a href="/merchants/new">New</a>
+            <a href="/merchants/edit_input">Edit</a>
+            <a href="/merchants">Index</a>
+            <a href="/merchants/show_input">Show</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <button class="dropbtn">Items
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content">
+            <a href="#">New</a>
+            <a href="#">Edit</a>
+            <a href="#">Index</a>
+            <a href="#">Show</a>
+          </div>
+        </div>
+      </div>
+      <div class="new">
+        <ul>
+             Id   /   <%= @merchant.id %><br>
+          Merchant  /  <%= @merchant.name %><br>
+        Created-at  /  <%= @merchant.created_at %><br>
+        Updated-at  /  <%= @merchant.updated_at %><br>
+        </ul>
+      </div>
+      <div class="footer">
+      </div>
+    </body>
+</html>

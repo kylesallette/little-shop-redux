@@ -1,7 +1,7 @@
 
   body {
 
-       background-color: black;
+       background-color:black;
        width: 100%;
 
   }
@@ -103,6 +103,9 @@
    bottom: 8px;
    border-color: coral;
    background: linear-gradient(to right, #669999 , #fff0b3);
+    display:inline-block;
+   margin: 50px;
+
 
  }
 
@@ -113,6 +116,8 @@
    border-bottom-right-radius:15px;
    background-color: #669999;
    font: italic bold 16px/30px Georgia, serif;
+   text-align: center;
+   height: 250px;
  }
 .buttons {
   color: #ffd11a;
@@ -134,4 +139,59 @@
  border-bottom-left-radius:15px;
  border-top-right-radius:15px;
  border-bottom-right-radius:15px;
+}
+
+.Row
+{
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    border-spacing: 10px;
+}
+.Column
+{
+    display: table-cell;
+    background-color: red;
+}
+
+.edit{
+  border-top-left-radius:15px;
+  border-bottom-left-radius:15px;
+  border-top-right-radius:15px;
+  border-bottom-right-radius:15px;
+  background-color: #669999;
+  font: italic bold 16px/30px Georgia, serif;
+  text-align: center;
+  height: 250px;
+}
+
+.input {
+  border-bottom-color: #b3b3b3;
+   border-bottom-left-radius: 3px;
+   border-bottom-right-radius: 3px;
+   border-bottom-style: solid;
+   border-bottom-width: 1px;
+   border-left-color: #b3b3b3;
+   border-left-style: solid;
+   border-left-width: 1px;
+   border-right-color: #b3b3b3;
+   border-right-style: solid;
+   border-right-width: 1px;
+   border-top-color: #b3b3b3;
+   border-top-left-radius: 3px;
+   border-top-right-radius: 3px;
+   border-top-style: solid;
+   border-top-width: 1px;
+
+}
+
+.show{
+  border-top-left-radius:15px;
+  border-bottom-left-radius:15px;
+  border-top-right-radius:15px;
+  border-bottom-right-radius:15px;
+  background-color: #669999;
+  font: italic bold 16px/30px Georgia, serif;
+  text-align: center;
+  height: 250px;
 }

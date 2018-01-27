@@ -1,13 +1,13 @@
 <html>
   <head>
     <title>Little Shop Redux</title>
-    <link rel="stylesheet" href="merchant.css"  type="text/css" />
+    <link rel="stylesheet" href="/merchant.css"  type="text/css" />
   </head>
   <body>
     <header>
       <img src="https://i.imgur.com/ZyZhR2j.jpg" alt="banner" height="300px" width="100%">
     </header>
-    <div class="nav"  width="100px">
+    <div class="nav">
       <div class="navbar">
         <a href="/">Home</a>
         <div class="dropdown">
@@ -33,20 +33,14 @@
           </div>
         </div>
       </div>
-      <% @merchants.each do |merchant| %>
-      <div class="merchants">
-        <ul>
-          <li>Id / <%= merchant.id %></li>
-          <li>Merchant / <%= merchant.name %></li>
-          <li>Created-at / <%= merchant.created_at %></li>
-          <li>Updated-at / <%= merchant.updated_at %></li>
-          <a class='buttons' href="/merchants/edit/<%= merchant.id  %>">Edit</a>
-          <form action="/merchants/<%= merchant.id %>" method="post">
-            <a class='buttons' href="/merchants/<%= merchant.id  %>">Delete</a>
-            <form action="/merchants/<%= merchant.id %>" method="delete">
-          </ul>
-        </form>
+      <div class="new">
+        <h3> Please enter merchant id you wish to edit </h3>
+        <form action="/merchants/edit/" method="get">
+        <input type="text" name="id"/>
+        <input type="submit" value="Search"/>
+    </form>
       </div>
-  <% end %>
+      <div class="footer">
+  </div>
   </body>
 </html>
