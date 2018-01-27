@@ -42,7 +42,7 @@
           <li>Updated-at / <%= merchant.updated_at %></li>
           <a class='buttons' href="/merchants/edit/<%= merchant.id  %>">Edit</a>
           <form action="/merchants/<%= merchant.id %>" method="post">
-            <a class='buttons' href="/merchants/<%= merchant.id  %>">Delete</a>
+            <a class='buttons' href="/merchants/delete/<%= merchant.id  %>">Delete</a>
             <form action="/merchants/<%= merchant.id %>" method="delete">
           </ul>
         </form>
