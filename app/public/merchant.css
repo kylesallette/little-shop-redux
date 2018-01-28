@@ -105,8 +105,19 @@
    background: linear-gradient(to right, #669999 , #fff0b3);
     display:inline-block;
    margin: 50px;
+ }
 
-
+ .categories {
+   border-top-left-radius:15px;
+   border-bottom-left-radius:15px;
+   border-top-right-radius:15px;
+   border-bottom-right-radius:15px;
+   font: italic bold 16px/30px Georgia, serif;
+   bottom: 8px;
+   border-color: coral;
+   background: linear-gradient(to right, #669999 , #fff0b3);
+   display:inline-block;
+   margin: 50px;
  }
 
  .new{

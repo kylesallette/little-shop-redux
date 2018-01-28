@@ -1,7 +1,56 @@
-<% @categories.each do |category| %>
-    <p><%= category.name %></p>
-    <form action="/categories/<%= category.name %>" method="POST">
-      <input type="hidden" name="_method" value="DELETE"/>
-      <input type="submit" value="Delete"/>
-    </form>
-<% end %>
+<html>
+  <head>
+    <title>Little Shop Redux</title>
+    <link rel="stylesheet" href="merchant.css"  type="text/css" />
+  </head>
+  <body>
+    <header>
+      <img src="https://i.imgur.com/lRdUfO1.jpg" alt="banner" height="300px" width="100%">
+    </header>
+    <div class="nav"  width="100px">
+      <div class="navbar">
+        <a href="/">Home</a>
+        <div class="dropdown">
+          <button class="dropbtn">Merchants
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content" id="drop-down">
+            <a href="/merchants/new">New</a>
+            <a href="/merchants/edit_input">Edit</a>
+            <a href="/merchants">Index</a>
+            <a href="/merchants/show_input">Show</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <button class="dropbtn">Items
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content">
+            <a href="#">New</a>
+            <a href="#">Edit</a>
+            <a href="#">Index</a>
+            <a href="#">Show</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <button class="dropbtn">Categories
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content">
+            <a href="/categories/new">New</a>
+            <a href="/categories">Index</a>
+          </div>
+        </div>
+      </div>
+      <% @categories.each do |category| %>
+        <div class="categories">
+            <p><%= category.name %></p>
+            <a href="/categories/<%= category.name %>/edit">Edit</a>
+            <form action="/categories/<%= category.name %>" method="POST">
+              <input type="hidden" name="_method" value="DELETE"/>
+              <input type="submit" value="Delete"/>
+            </form>
+        </div>
+      <% end %>
+  </body>
+</html>
