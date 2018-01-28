@@ -9,7 +9,7 @@ describe "a user visits homepage" do
       expect(page).to have_content("Items")
     end
 
-    it "user can click home button" do
+     it "user can click home button" do
       visit "/"
       click_on("Home")
 
@@ -54,6 +54,15 @@ describe "a user visits homepage" do
 
         expect(current_path).to eq("/merchants/show_input")
       end
+    end
+
+    it "merchants have edit button" do
+      visit "/merchants"
+
+      within("body") do
+
+      expect(page).to have_content("Edit")
+     end
     end
   end
 end
