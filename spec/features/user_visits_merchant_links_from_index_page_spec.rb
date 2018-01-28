@@ -9,7 +9,7 @@ describe "a user visits homepage" do
       expect(page).to have_content("Items")
     end
 
-    it "user can click home button" do
+     it "user can click home button" do
       visit "/"
       click_on("Home")
 
