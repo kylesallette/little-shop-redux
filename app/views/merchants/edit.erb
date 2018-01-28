@@ -39,8 +39,8 @@
           <input type="hidden" name="_method"  class="input" value="PUT" />
           <input type='number' name='merchant[id]' style="width: 300px;" class="input" value="<%= @merchant.id %>"/><br/>
           <input type='text' name='merchant[name]' class="input" style="width: 300px;" class="input" value="<%= @merchant.name %>"/><br/>
-          <input type='date' name='merchant[created_at]' class="input" style="width: 300px;" class="input" value="<%= @merchant.created_at %>"/><br/>
-          <input type='date' name='merchant[updated_at]' class="input" style="width: 300px;" class="input" value="<%= @merchant.created_at %>"/><br/>
+          <input type="hidden" name='merchant[created_at]' class="input" style="width: 300px;" class="input" value="<%= @merchant.created_at %>"/><br/>
+          <input type="hidden" name='merchant[updated_at]' class="input" style="width: 300px;" class="input" value="<%= Time.now %>"/><br/>
           <input type='submit'/>
         </form>
        </div>
