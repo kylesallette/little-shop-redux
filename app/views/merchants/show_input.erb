@@ -14,7 +14,7 @@
           <button class="dropbtn">Merchants
             <i class="fa fa-caret-down"></i>
           </button>
-          <div class="dropdown-content" id="merchant-dropdown">
+          <div class="dropdown-content">
             <a href="/merchants/new">New</a>
             <a href="/merchants/edit_input">Edit</a>
             <a href="/merchants">Index</a>
@@ -26,18 +26,18 @@
             <i class="fa fa-caret-down"></i>
           </button>
           <div class="dropdown-content">
-            <a href="#">New</a>
-            <a href="#">Edit</a>
-            <a href="#">Index</a>
-            <a href="#">Show</a>
+            <a href="/items/new">New</a>
+            <a href="/items/edit_input">Edit</a>
+            <a href="/items">Index</a>
+            <a href="/items/show_input">Show</a>
           </div>
         </div>
       </div>
       <div class="new">
         <h3> Please enter merchant id </h3>
         <form action="/merchants/" method="get">
-        <input id="id-box" type="text" name="id"/>
-        <input id="submit-button" type="submit" value="Search"/>
+        <input type="text" name="id"/>
+        <input type="submit" value="Search"/>
     </form>
       </div>
       <div class="footer">

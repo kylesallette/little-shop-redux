@@ -5,7 +5,7 @@
   </head>
   <body>
     <header>
-      <img src="https://i.imgur.com/ZyZhR2j.jpg" alt="banner" height="300px" width="100%">
+      <img src="https://i.imgur.com/WvrLpTj.jpg" alt="banner" height="300px" width="100%">
     </header>
     <div class="nav">
       <div class="navbar">
@@ -34,13 +34,16 @@
         </div>
       </div>
       <div class="edit">
-        <form action="/merchants/<%= @merchant.id %>" method="POST">
-          <p>Edit Merchant</p>
+        <form action="/items/<%= @item.id %>" method="POST">
+          <p>Edit Item</p>
           <input type="hidden" name="_method"  class="input" value="PUT" />
-          <input type='number' name='merchant[id]' style="width: 300px;" class="input" value="<%= @merchant.id %>"/><br/>
-          <input type='text' name='merchant[name]' class="input" style="width: 300px;" class="input" value="<%= @merchant.name %>"/><br/>
-          <input type="hidden" name='merchant[created_at]' class="input" style="width: 300px;" class="input" value="<%= @merchant.created_at %>"/><br/>
-          <input type="hidden" name='merchant[updated_at]' class="input" style="width: 300px;" class="input" value="<%= Time.now %>"/><br/>
+          <input type='number' name='item[id]' style="width: 300px;" class="input" value="<%= @item.id %>"/><br/>
+          <input type='text' name='item[name]' class="input" style="width: 300px;" class="input" value="<%= @item.name %>"/><br/>
+          <input type='text' name='item[description]' class="input" style="width: 300px;" class="input" value="<%= @item.description %>"/><br/>
+          <input type='text' name='item[unit_price]' class="input" style="width: 300px;" class="input" value="<%= @item.unit_price %>"/><br/>
+          <input type='text' name='item[merchant_id]' class="input" style="width: 300px;" class="input" value="<%= @item.merchant_id %>"/><br/>
+          <input type="hidden" name='item[created_at]' class="input" style="width: 300px;" class="input" value="<%= @item.created_at %>"/><br/>
+          <input type="hidden" name='item[updated_at]' class="input" style="width: 300px;" class="input" value="<%= Time.now %>"/><br/>
           <input type='submit'/>
         </form>
        </div>
