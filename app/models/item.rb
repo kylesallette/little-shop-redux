@@ -1,6 +1,6 @@
 class Item < ActiveRecord::Base
-  validates_presence_of :title,
+  validates_presence_of :name,
                         :description,
-                        :price,
-                        :image
+                        :unit_price
+                        :merchant_id
 end
