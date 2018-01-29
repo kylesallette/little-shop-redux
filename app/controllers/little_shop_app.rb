@@ -16,7 +16,7 @@ class LittleShopApp < Sinatra::Base
     @merchants = Merchant.all
     erb :"merchants/edit_input"
   end
-############################
+
   get "/merchants" do
     @merchants = Merchant.all
     erb :"merchants/index"
@@ -26,7 +26,7 @@ class LittleShopApp < Sinatra::Base
     Merchant.destroy(id.to_i)
     redirect "/merchants"
   end
-############################
+
   get "/merchants/new" do
     erb :"merchants/new"
   end
