@@ -107,6 +107,10 @@
    margin: 50px;
  }
 
+ .categories-span {
+   text-align: center;
+ }
+
  .categories {
    border-top-left-radius:15px;
    border-bottom-left-radius:15px;
@@ -118,6 +122,8 @@
    background: linear-gradient(to right, #669999 , #fff0b3);
    display:inline-block;
    margin: 50px;
+   padding: 20px;
+   text-align: center;
  }
 
  .new{

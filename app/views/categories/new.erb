@@ -1,7 +1,7 @@
 <html>
   <head>
     <title>Little Shop Redux</title>
-    <link rel="stylesheet" href="merchant.css"  type="text/css" />
+    <link rel="stylesheet" href="/merchant.css"  type="text/css" />
   </head>
   <body>
     <header>
@@ -42,10 +42,12 @@
           </div>
         </div>
       </div>
-    <form action="/categories" method="POST">
-      <p> Enter a new category:</p>
-      Enter category name: <input type="text" name="category[name]"/>
-      <input type="submit"/>
-    </form>
+      <div class="new">
+        <form action="/categories" method="POST">
+          <p> Enter a new category:</p>
+          Enter category name: <input type="text" name="category[name]"/>
+          <input type="submit"/>
+        </form>
+      </div>
   </body>
 </html>

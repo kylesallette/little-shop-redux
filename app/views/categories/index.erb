@@ -1,7 +1,7 @@
 <html>
   <head>
     <title>Little Shop Redux</title>
-    <link rel="stylesheet" href="merchant.css"  type="text/css" />
+    <link rel="stylesheet" href="/merchant.css"  type="text/css" />
   </head>
   <body>
     <header>
@@ -42,6 +42,7 @@
           </div>
         </div>
       </div>
+      <div class="categories-span">
       <% @categories.each do |category| %>
         <div class="categories">
             <p><%= category.name %></p>
@@ -52,5 +53,6 @@
             </form>
         </div>
       <% end %>
+    </div>
   </body>
 </html>
