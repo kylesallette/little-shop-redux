@@ -22,6 +22,11 @@ class LittleShopApp < Sinatra::Base
     erb :"merchants/index"
   end
 
+  delete "/merchants/:id" do |id|
+    Merchant.destroy(id.to_i)
+    redirect "/merchants"
+  end
+
   get "/merchants/new" do
     erb :"merchants/new"
   end
@@ -55,11 +60,6 @@ class LittleShopApp < Sinatra::Base
   put "/merchants/:id" do |id|
     Merchant.update(id.to_i, params[:merchant])
     redirect "/merchants/#{params[:merchant][:id]}"
-  end
-
-  get "/merchants/delete/:id" do |id|
-    Merchant.destroy(id.to_i)
-    redirect "/merchants"
   end
 
   get "/categories" do
