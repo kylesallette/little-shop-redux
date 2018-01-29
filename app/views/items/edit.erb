@@ -1,0 +1,53 @@
+<html>
+  <head>
+    <title>Little Shop Redux</title>
+    <link rel="stylesheet" href="/merchant.css"  type="text/css" />
+  </head>
+  <body>
+    <header>
+      <img src="https://i.imgur.com/WvrLpTj.jpg" alt="banner" height="300px" width="100%">
+    </header>
+    <div class="nav">
+      <div class="navbar">
+        <a href="/">Home</a>
+        <div class="dropdown">
+          <button class="dropbtn">Merchants
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content">
+            <a href="/merchants/new">New</a>
+            <a href="/merchants/edit_input">Edit</a>
+            <a href="/merchants">Index</a>
+            <a href="/merchants/show_input">Show</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <button class="dropbtn">Items
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content">
+            <a href="/items/new">New</a>
+            <a href="/items/edit_input">Edit</a>
+            <a href="/items">Index</a>
+            <a href="/items/show_input">Show</a>
+          </div>
+        </div>
+      </div>
+      <div class="edit">
+        <form action="/items/<%= @item.id %>" method="POST">
+          <p>Edit Item</p>
+          <input type="hidden" name="_method"  class="input" value="PUT" />
+          <input type='number' name='item[id]' style="width: 300px;" class="input" value="<%= @item.id %>"/><br/>
+          <input type='text' name='item[name]' class="input" style="width: 300px;" class="input" value="<%= @item.name %>"/><br/>
+          <input type='text' name='item[description]' class="input" style="width: 300px;" class="input" value="<%= @item.description %>"/><br/>
+          <input type='text' name='item[unit_price]' class="input" style="width: 300px;" class="input" value="<%= @item.unit_price %>"/><br/>
+          <input type='text' name='item[merchant_id]' class="input" style="width: 300px;" class="input" value="<%= @item.merchant_id %>"/><br/>
+          <input type="hidden" name='item[created_at]' class="input" style="width: 300px;" class="input" value="<%= @item.created_at %>"/><br/>
+          <input type="hidden" name='item[updated_at]' class="input" style="width: 300px;" class="input" value="<%= Time.now %>"/><br/>
+          <input type='submit'/>
+        </form>
+       </div>
+      <div class="footer">
+  </div>
+  </body>
+</html>

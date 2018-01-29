@@ -5,7 +5,7 @@
   </head>
   <body>
     <header>
-      <img src="https://i.imgur.com/ZyZhR2j.jpg" alt="banner" height="300px" width="100%">
+      <img src="https://i.imgur.com/WvrLpTj.jpg" alt="banner" height="300px" width="100%">
     </header>
     <div class="nav">
       <div class="navbar">
@@ -14,11 +14,11 @@
           <button class="dropbtn">Merchants
             <i class="fa fa-caret-down"></i>
           </button>
-          <div class="dropdown-content" id="merchant-dropdown">
-            <a href="/merchants/new">Create a New Merchant</a>
-            <a href="/merchants/edit_input">Edit a Merchant</a>
-            <a href="/merchants">View All Merchants</a>
-            <a href="/merchants/show_input">View a Merchant</a>
+          <div class="dropdown-content">
+            <a href="/merchants/new">New</a>
+            <a href="/merchants/edit_input">Edit</a>
+            <a href="/merchants">Index</a>
+            <a href="/merchants/show_input">Show</a>
           </div>
         </div>
         <div class="dropdown">
@@ -26,16 +26,16 @@
             <i class="fa fa-caret-down"></i>
           </button>
           <div class="dropdown-content">
-            <a href="#">Create a New Item</a>
-            <a href="#">Edit an Item</a>
-            <a href="#">View All Items</a>
-            <a href="#">View an Item</a>
+            <a href="/items/new">New</a>
+            <a href="/items/edit_input">Edit</a>
+            <a href="/items">Index</a>
+            <a href="/items/show_input">Show</a>
           </div>
         </div>
       </div>
       <div class="new">
-        <h3> Please enter merchant id you wish to edit </h3>
-        <form action="/merchants/edit/" method="get">
+        <h3> Please enter item id you wish to edit </h3>
+        <form action="/items/edit/" method="get">
         <input type="text" name="id"/>
         <input type="submit" value="Search"/>
     </form>

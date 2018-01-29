@@ -1,0 +1,55 @@
+<html>
+  <head>
+    <title>Little Shop Redux</title>
+    <link rel="stylesheet" href="merchant.css"  type="text/css" />
+  </head>
+  <body>
+    <header>
+      <img src="https://i.imgur.com/WvrLpTj.jpg" alt="banner" height="300px" width="100%">
+    </header>
+    <div class="nav"  width="100px">
+      <div class="navbar">
+        <a href="/">Home</a>
+        <div class="dropdown">
+          <button class="dropbtn">Merchants
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content" id="drop-down">
+            <a href="/merchants/new">New</a>
+            <a href="/merchants/edit_input">Edit</a>
+            <a href="/merchants">Index</a>
+            <a href="/merchants/show_input">Show</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <button class="dropbtn">Items
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content">
+            <a href="/items/new">New</a>
+            <a href="/items/edit_input">Edit</a>
+            <a href="/items">Index</a>
+            <a href="/items/show_input">Show</a>
+          </div>
+        </div>
+      </div>
+      <% @items.each do |item| %>
+      <div class="merchants">
+        <ul>
+          <li>Id / <%= item.id %></li>
+          <li>Item / <%= item.name %></li>
+          <li>Description / <%= item.description%></li>
+          <li>Unit-price / <%= item.unit_price%></li>
+          <li>Merchant-id / <%= item.merchant_id%></li>
+          <li>Created-at / <%= item.created_at %></li>
+          <li>Updated-at / <%= item.updated_at %></li>
+          <a class='buttons' href="/items/edit/<%= item.id  %>">Edit</a>
+          <form action="/items/<%= item.id %>" method="post">
+            <a class='buttons' href="/items/delete/<%= item.id  %>">Delete</a>
+            <form action="/items/<%= item.id %>" method="delete">
+          </ul>
+        </form>
+      </div>
+  <% end %>
+  </body>
+</html>
