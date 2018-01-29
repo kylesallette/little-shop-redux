@@ -42,11 +42,14 @@
           </div>
         </div>
       </div>
+      <div class="edit">
       <form action="/categories/<%= @category.name %>" method="POST">
+        <p>Edit Category</p>
         <input type="hidden" name="_method" value="PUT"/>
-        <input type="number" name="category[id]" value="<%= @category.id %>"/>
-        <input type="text" name="category[name]" value="<%= @category.name %>"/>
+        <input class="input" type="number" name="category[id]" value="<%= @category.id %>" value="<%= @category.id %>"/><br/>
+        <input class="input" type="text" name="category[name]" value="<%= @category.name %>"/><br/>
         <input type="submit"/>
       </form>
+    </div>
   </body>
 </html>
