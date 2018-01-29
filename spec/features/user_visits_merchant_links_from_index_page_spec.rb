@@ -20,7 +20,7 @@ describe "a user visits homepage" do
       visit "/merchants"
 
       within("#drop-down") do
-        click_on("New")
+        click_on("Create a New Merchant")
 
         expect(current_path).to eq("/merchants/new")
       end
@@ -30,7 +30,7 @@ describe "a user visits homepage" do
       visit "/merchants"
 
       within("#drop-down") do
-        click_on("Edit")
+        click_on("Edit a Merchant")
 
         expect(current_path).to eq("/merchants/edit_input")
       end
@@ -40,7 +40,7 @@ describe "a user visits homepage" do
       visit "/merchants"
 
       within("#drop-down") do
-        click_on("Index")
+        click_on("View All Merchants")
 
         expect(current_path).to eq("/merchants")
       end
@@ -50,7 +50,7 @@ describe "a user visits homepage" do
       visit "/merchants"
 
       within("#drop-down") do
-        click_on("Show")
+        click_on("View a Merchant")
 
         expect(current_path).to eq("/merchants/show_input")
       end

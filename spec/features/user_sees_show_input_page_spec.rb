@@ -21,7 +21,7 @@ describe "user visits merchant show page" do
       visit "/merchants/show_input"
 
       within("#merchant-dropdown") do
-        click_on("New")
+        click_on("Create a New Merchant")
 
         expect(current_path).to eq("/merchants/new")
       end
@@ -31,7 +31,7 @@ describe "user visits merchant show page" do
       visit "/merchants/show_input"
 
       within("#merchant-dropdown") do
-        click_on("Edit")
+        click_on("Edit a Merchant")
 
         expect(current_path).to eq("/merchants/edit_input")
       end
@@ -41,7 +41,7 @@ describe "user visits merchant show page" do
       visit "/merchants/show_input"
 
       within("#merchant-dropdown") do
-        click_on("Index")
+        click_on("View All Merchants")
 
         expect(current_path).to eq("/merchants")
       end
@@ -51,7 +51,7 @@ describe "user visits merchant show page" do
       visit "/merchants/show_input"
 
       within("#merchant-dropdown") do
-        click_on("Show")
+        click_on("View a Merchant")
 
         expect(current_path).to eq("/merchants/show_input")
       end
