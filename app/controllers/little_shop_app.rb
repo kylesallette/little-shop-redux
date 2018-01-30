@@ -4,6 +4,7 @@ class LittleShopApp < Sinatra::Base
 
 
   get "/" do
+    @categories = Category.all
     erb :"dashboard"
   end
 

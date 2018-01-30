@@ -44,7 +44,24 @@
           </div>
         </div>
       </div>
-
+      <div>
+        <table>
+          <tr>
+            <th>Category Name</th>
+            <th>Avg Price of Items</th>
+          </tr>
+          <% @categories.each do |category| %>
+            <tr>
+              <td>
+                <%= category.name %>
+              </td>
+              <td>
+                <%= category.average_price %>
+              </td>
+            </tr>
+          <% end %>
+        </table>
+      </div>
       <div class="footer">
   </div>
   </body>

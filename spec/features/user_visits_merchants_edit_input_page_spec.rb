@@ -1,6 +1,6 @@
 describe "a user visits merchants edit input page" do
-  context "visit /merchants/edit_input" do
-    it "user can create a merchant and then search for that merchant and sees merchant's show page" do
+  context "when visit /merchants/edit_input" do
+    it "user sees merchant's show page" do
       visit "/merchants/new"
       fill_in "number-box", with: "12334105"
       fill_in "text-box", with: "Example Merchant"
