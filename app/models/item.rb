@@ -1,10 +1,9 @@
 class Item < ActiveRecord::Base
   validates_presence_of :name,
                         :description,
-                        :unit_price,
-                        :merchant_id
-  belongs_to            :merchants
-  belongs_to            :categories
+                        :unit_price
+  belongs_to            :merchant
+  belongs_to            :category
 
   def self.total
     Item.all.count
