@@ -44,13 +44,23 @@
         </div>
       </div>
       <div class="new">
-        <h3> Please enter merchant id </h3>
+        <h3> Please enter merchant id or select a name from the list.</h3>
         <form action="/merchants/" method="get">
-        <input id="id-box" type="text" name="id"/>
-        <input id="submit-button" type="submit" value="Search"/>
-    </form>
+          <input id="id-box" type="text" name="id"/>
+          <input id="submit-button" type="submit" value="Search"/>
+        </form>
+        <form action="/merchants/" method="get">
+          <select name="id">
+            <label for="id">Select a Merchant</label>
+            <% @merchants.each() do |merchant| %>
+            <option value="<%= merchant.id()%>"> <%= merchant.name() %> </option>
+            <% end %>
+            <input type="submit" value="Search"/>
+          </select>
+          <br><br>
+        </form>
       </div>
       <div class="footer">
-  </div>
-  </body>
+      </div>
+    </body>
 </html>

@@ -36,4 +36,5 @@ ActiveRecord::Schema.define(version: 20180130180410) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "items", "merchants"
 end
