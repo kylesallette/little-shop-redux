@@ -3,7 +3,7 @@ class Category < ActiveRecord::Base
   has_many              :items
 
   def average_price
-    items.average(:unit_price)
+    (items.average(:unit_price).to_f).round(2)
   end
 
   def self.most_expensive_item_category
