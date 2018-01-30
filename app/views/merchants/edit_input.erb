@@ -47,7 +47,7 @@
         <h3> Please enter merchant-id or select the merchant you wish to edit </h3>
         <form action="/merchants/edit/" method="get">
           <input id="merchant_id_text_box" type="text" name="id"/>
-          <input type="submit" value="Search"/>
+          <input id="search-one" type="submit" value="Search"/>
         </form>
         <form action="/merchants/edit/" method="get">
           <select name="id">
@@ -55,7 +55,7 @@
             <% @merchants.each() do |merchant| %>
             <option value="<%= merchant.id()%>"> <%= merchant.name() %> </option>
             <% end %>
-            <input type="submit" value="Search"/>
+            <input id="search-two" type="submit" value="Search"/>
           </select>
           <br><br>
         </form>
