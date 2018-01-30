@@ -72,11 +72,6 @@ class LittleShopApp < Sinatra::Base
     erb :"categories/new"
   end
 
-  get "/categories/:name" do
-    @category = Category.find_by(name: params[:name])
-    erb :"categories/show"
-  end
-
   post "/categories" do
     category = Category.new(params[:category])
     category.save
