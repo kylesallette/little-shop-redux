@@ -154,9 +154,17 @@ class LittleShopApp < Sinatra::Base
     redirect "/items"
   end
 
+  get "/items-dashboard" do
+    @item_count = Item.count
+    @average_item_price = Item.average_price
+    @recent_item = Item.newest_item.name
+    @oldest_item = Item.oldest_item.name
+    erb :"items/dashboard"
+  end
+
   not_found do
     status 404
     erb :"error"
   end
-  
+
 end

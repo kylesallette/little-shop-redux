@@ -1,5 +1,4 @@
-
-  body {
+body {
 
        background-color:black;
        width: 100%;
@@ -11,6 +10,7 @@
    border-radius: 25px;
    width: 100%;
  }
+
  .nav{
    position: absolute;
    background-color:#b38f00;
@@ -107,6 +107,11 @@
     display:inline-block;
    margin: 50px;
  }
+
+ .analytics {
+  text-align: center;
+  padding: 20px;
+}
 
  .categories-span {
    text-align: center;
