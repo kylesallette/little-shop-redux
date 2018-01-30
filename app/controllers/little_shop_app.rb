@@ -153,4 +153,10 @@ class LittleShopApp < Sinatra::Base
     Item.destroy(id.to_i)
     redirect "/items"
   end
+
+  not_found do
+    status 404
+    erb :"error"
+  end
+  
 end
