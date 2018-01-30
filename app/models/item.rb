@@ -2,8 +2,6 @@ class Item < ActiveRecord::Base
   validates_presence_of :name,
                         :description,
                         :unit_price
-                        # :image
-  # before_validation     :default_image A THOUGHT
   belongs_to            :merchant
   belongs_to            :category
 
@@ -16,26 +14,10 @@ class Item < ActiveRecord::Base
   end
 
   def self.newest_item
-    Item.last
+    Item.order(created_at: :desc).first
   end
 
   def self.oldest_item
-    Item.first
+    Item.order(created_at: :asc).first
   end
-
-  # THESE ARE THOUGHTS ON A WAY TO SET A DEFAULT ITEM IMAGE
-  #
-  # def default_image
-  #   if self.image == ""
-  #     self.image = "enter a image url here"
-  #   end
-  # end
-  #
-  # OR (NOT SURE WHICH)
-  #
-  # def self.default_image
-  #   if self.image == ""
-  #     self.image = "enter a image url here"
-  #   end
-  # end
 end

@@ -1,6 +1,25 @@
 require "./spec/spec_helper"
 
 describe Item do
+  describe "Class methods" do
+    describe ".newest_item" do
+      it "returns most recent item based on created_at" do
+      oldest_item = Item.create!(name: "apple", description: "yum", unit_price: 20, merchant_id: 123, created_at: "2016-01-11 11:51:37 UTC")
+      newest_item = Item.create!(name: "pear", description: "delish", unit_price: 40, merchant_id: 222, created_at: "2017-01-11 11:51:37 UTC")
+
+      expect(Item.newest_item).to eq(newest_item)
+    end
+  end
+    describe ".oldest_item" do
+      it "returns least recent item based on created_at" do
+      oldest_item = Item.create!(name: "apple", description: "yum", unit_price: 20, merchant_id: 123)
+      newest_item = Item.create!(name: "pear", description: "delish", unit_price: 40, merchant_id: 222)
+
+      expect(Item.oldest_item).to eq(oldest_item)
+    end
+  end
+  end
+
   describe "validations" do
     it "it is invalid without a name" do
       item = Item.create(description: "description", unit_price: 10, merchant_id: 100)
