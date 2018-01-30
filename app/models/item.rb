@@ -1,7 +1,8 @@
 class Item < ActiveRecord::Base
   validates_presence_of :name,
                         :description,
-                        :unit_price
+                        :unit_price,
+                        :merchant_id
   belongs_to            :merchant
   belongs_to            :category
 

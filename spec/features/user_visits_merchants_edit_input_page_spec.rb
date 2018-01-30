@@ -8,7 +8,7 @@ describe "a user visits merchants edit input page" do
 
       visit "/merchants/edit_input"
       fill_in "merchant_id_text_box", with: "12334105"
-      click_on("Search")
+      click_on("search-one")
 
       expect(current_path).to eq("/merchants/edit/")
     end
