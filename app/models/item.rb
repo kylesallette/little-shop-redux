@@ -1,10 +1,11 @@
 class Item < ActiveRecord::Base
   validates_presence_of :name,
                         :description,
-                        :unit_price,
-                        :merchant_id
-  belongs_to            :merchants
-  belongs_to            :categories
+                        :unit_price
+                        # :image
+  # before_validation     :default_image A THOUGHT
+  belongs_to            :merchant
+  belongs_to            :category
 
   def self.total
     Item.all.count
@@ -21,4 +22,20 @@ class Item < ActiveRecord::Base
   def self.oldest_item
     Item.first
   end
+
+  # THESE ARE THOUGHTS ON A WAY TO SET A DEFAULT ITEM IMAGE
+  #
+  # def default_image
+  #   if self.image == ""
+  #     self.image = "enter a image url here"
+  #   end
+  # end
+  #
+  # OR (NOT SURE WHICH)
+  #
+  # def self.default_image
+  #   if self.image == ""
+  #     self.image = "enter a image url here"
+  #   end
+  # end
 end
