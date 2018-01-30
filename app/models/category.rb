@@ -1,6 +1,7 @@
 class Category < ActiveRecord::Base
   validates_presence_of :name
   has_many              :items
+#   before_validation     :default_image
 
   # SOME IDEAS ON HOW TO FIND Category with most expensive item && Category with least expensive item.
   #
@@ -13,4 +14,13 @@ class Category < ActiveRecord::Base
   #   lowest_price = items.minimum(:unit_price)
   #   items.find_by(:unit_price lowest_price).category
   # end
+
+#   def default_image
+#     if self.id == 1
+#       self.image = "http://www.ptahai.com/wp-content/uploads/2016/06/Best-Reverse-Image-Search-Engines-Apps-And-Its-Uses-2016.jpg"
+#     end
+#   end
 end
+
+
+# change csv
