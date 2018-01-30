@@ -2,8 +2,7 @@ class Item < ActiveRecord::Base
   validates_presence_of :name,
                         :description,
                         :unit_price
-                        # :image
-  # before_validation     :default_image A THOUGHT
+  before_validation     :default_category
   belongs_to            :merchant
   belongs_to            :category
 
@@ -23,19 +22,9 @@ class Item < ActiveRecord::Base
     Item.first
   end
 
-  # THESE ARE THOUGHTS ON A WAY TO SET A DEFAULT ITEM IMAGE
-  #
-  # def default_image
-  #   if self.image == ""
-  #     self.image = "enter a image url here"
-  #   end
-  # end
-  #
-  # OR (NOT SURE WHICH)
-  #
-  # def self.default_image
-  #   if self.image == ""
-  #     self.image = "enter a image url here"
-  #   end
-  # end
+  def default_category
+    if self.category_id == nil
+      self.category_id = [1,2,3].sample
+    end
+  end
 end

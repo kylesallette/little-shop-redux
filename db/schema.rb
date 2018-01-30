@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 20180129211346) do
   create_table "items", force: :cascade do |t|
     t.string "name"
     t.string "description"
-    t.decimal "unit_price"
+    t.float "unit_price"
     t.integer "merchant_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -36,3 +36,7 @@ ActiveRecord::Schema.define(version: 20180129211346) do
   end
 
 end
+ #   IF THE IMAGES IS DECIDED BASES ON THE CATEGORY ID WE DON'T NEED IT ANYWHERE IN THE TABLES.
+ # BUT THEN IF WE NEED TO BE ABLE TO SET ANOTHER IMAGE BESIDES DEFAULT WE'RE GONNA NEED SOMEWHERE TO SAVE THAT URL
+ # SO I THINK WE NEED TO GIVE CATEGORY TABLE IMAGE_ID AND USE THAT AS A FOREIGN KEY IN THE ITEM TABLE. THEN
+ # WHEN WE NEED TO GIVE A NEW ITEM AN IMAGE WE HAVE A PLACE TO SAVE IT
