@@ -12,11 +12,5 @@ CSV.foreach('data/categories.csv', headers: true, header_converters: :symbol, co
 end
 
 CSV.foreach('data/items.csv', headers: true, header_converters: :symbol, converters: :numeric) do |row|
-  Item.create(id:          row[:id],
-              name:        row[:name],
-              description: row[:description],
-              unit_price:  row[:unit_price],
-              created_at:  row[:created_at],
-              updated_at:  row[:updated_at],
-              merchant_id: row[:merchant_id])
+  Item.create(row.to_hash)
 end
