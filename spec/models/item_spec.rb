@@ -18,6 +18,24 @@ describe Item do
         expect(Item.oldest_item).to eq(oldest_item)
       end
     end
+    describe ".total" do
+      it "returns total number of items" do
+        Item.create!(name: "apple", description: "yum", unit_price: 20, merchant_id: 123, created_at: "2016-01-11 11:51:37 UTC")
+        Item.create!(name: "pear", description: "delish", unit_price: 40, merchant_id: 222, created_at: "2017-01-11 11:51:37 UTC")
+
+        expect(Item.total).to eq(2)
+      end
+    end
+    describe ".average_price" do
+      it "returns average price of all items" do
+        Item.create!(name: "apple", description: "yum", unit_price: 2000, merchant_id: 123, created_at: "2016-01-11 11:51:37 UTC")
+        Item.create!(name: "pear", description: "delish", unit_price: 4000, merchant_id: 222, created_at: "2017-01-11 11:51:37 UTC")
+        Item.create!(name: "apple1", description: "yum", unit_price: 2000, merchant_id: 123, created_at: "2016-01-11 11:51:37 UTC")
+        Item.create!(name: "pear1", description: "delish", unit_price: 4000, merchant_id: 222, created_at: "2017-01-11 11:51:37 UTC")
+
+        expect(Item.average_price).to eq(30)
+      end
+    end
   end
 
   describe "validations" do
