@@ -6,9 +6,15 @@ body {
 
   }
 
+th {
+  border: 1px solid black;
+  padding: 5px;
+}
+
 table tr td {
   border: 1px solid black;
   text-align: center;
+  padding: 5px;
 }
 
  .header {
