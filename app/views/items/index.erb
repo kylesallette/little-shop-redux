@@ -55,10 +55,11 @@
           <li>Merchant-id / <%= item.merchant_id%></li>
           <li>Created-at / <%= item.created_at %></li>
           <li>Updated-at / <%= item.updated_at %></li>
-          <a class='buttons' href="/items/edit/<%= item.id  %>">Edit</a>
-          <form action="/items/<%= item.id %>" method="post">
-            <a class='buttons' href="/items/delete/<%= item.id  %>">Delete</a>
-            <form action="/items/<%= item.id %>" method="delete">
+          <a id="submit" class='link-button' href="/items/edit/<%= item.id  %>">Edit</a>
+          <form action="/items/<%= item.id %>" method="POST">
+            <input type="hidden" name="_method" value="DELETE"/>
+            <input id="submit" type="submit" value="Delete"/>
+          </form>
           </ul>
         </form>
       </div>
