@@ -48,7 +48,6 @@
       <div class="new">
         <form action="/merchants" method="POST">
           <p>Enter a new merchant:</p>
-          Enter merchant id: <input id="number-box" type="number" name="merchant[id]"/><br/>
           Enter a merchant name: <input id="text-box" type="text" name="merchant[name]"/><br/>
           <input type="hidden" name="merchant[created_at]" value="<%= Time.now %>"/>
           <input type="hidden" name="merchant[updated_at]" value="<%= Time.now %>"/>
