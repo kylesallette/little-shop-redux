@@ -8,7 +8,6 @@ describe "a user visits new merchant page" do
       expect(page).to have_content("Merchants")
       expect(page).to have_content("Items")
       expect(page).to have_content("Enter a new merchant:")
-      expect(page).to have_content("Enter merchant id:")
       expect(page).to have_content("Enter a merchant name:")
     end
 
@@ -59,12 +58,6 @@ describe "a user visits new merchant page" do
       end
     end
 
-    it "user can see number box" do
-      visit "/merchants/new"
-
-      expect(page.first(:css, "#number-box")[:value]).to be_nil
-    end
-
     it "user can see text box" do
       visit "/merchants/new"
 
@@ -79,7 +72,6 @@ describe "a user visits new merchant page" do
 
     it "clicking submit button redirects and adds to merchant index page" do
       visit "/merchants/new"
-      fill_in "number-box", with: "420"
       fill_in "text-box", with: "Example Merchant"
       click_on("submit-button")
 
@@ -87,7 +79,6 @@ describe "a user visits new merchant page" do
       expect(page).to have_content("Home")
       expect(page).to have_content("Merchants")
       expect(page).to have_content("Items")
-      expect(page).to have_content("420")
       expect(page).to have_content("Example Merchant")
     end
   end

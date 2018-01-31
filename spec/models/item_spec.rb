@@ -12,12 +12,12 @@ describe Item do
   end
     describe ".oldest_item" do
       it "returns least recent item based on created_at" do
-      oldest_item = Item.create!(name: "apple", description: "yum", unit_price: 20, merchant_id: 123)
-      newest_item = Item.create!(name: "pear", description: "delish", unit_price: 40, merchant_id: 222)
+        oldest_item = Item.create!(name: "apple", description: "yum", unit_price: 20, merchant_id: 123)
+        newest_item = Item.create!(name: "pear", description: "delish", unit_price: 40, merchant_id: 222)
 
-      expect(Item.oldest_item).to eq(oldest_item)
+        expect(Item.oldest_item).to eq(oldest_item)
+      end
     end
-  end
   end
 
   describe "validations" do
