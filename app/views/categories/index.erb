@@ -48,10 +48,10 @@
       <% @categories.each do |category| %>
         <div class="categories">
             <p><%= category.name %></p>
-            <a href="/categories/<%= category.name %>/edit">Edit</a>
+            <a id="submit" class="link-button" href="/categories/<%= category.name %>/edit">Edit</a>
             <form action="/categories/<%= category.name %>" method="POST">
               <input type="hidden" name="_method" value="DELETE"/>
-              <input type="submit" value="Delete"/>
+              <input id="submit" type="submit" value="Delete"/>
             </form>
         </div>
       <% end %>
