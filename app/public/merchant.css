@@ -240,3 +240,23 @@ text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #ff0080, 0 0 30px #ff0080, 0 
 text-align: center;
 
 }
+
+#submit {
+  background-color: gold;
+   border-radius:6px;
+   color: black;
+   font-size: 20px;
+   text-decoration: none;
+   cursor: pointer;
+   border:none;
+   font: italic bold 16px/30px Georgia, serif;
+   margin-top: 10px;
+}
+
+#submit:hover {
+    background: white;
+}
+
+ .link-button {
+   padding: 7px;
+ }
