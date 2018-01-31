@@ -99,7 +99,7 @@ DEPENDENCIES
   capybara
   database_cleaner
   launchy
-  pg (~> 0.18)
+  pg
   pry
   rack-test
   rspec
