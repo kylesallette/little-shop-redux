@@ -6,7 +6,7 @@
   </head>
   <body>
     <header>
-      <img src="https://i.imgur.com/WvrLpTj.jpg" alt="banner" height="300px" width="100%">
+      <img src="https://i.imgur.com/lRdUfO1.jpg" alt="banner" height="300px" width="100%">
     </header>
     <div class="nav"  width="100px">
       <div class="navbar">
@@ -48,15 +48,27 @@
       <div class="analytics">
         <div class="merchants">
           <div class="analytics">
-            <h1>Item Analytics</h1>
-            <p>Item Count:</br><%= @item_count %>
-            </p>
-            <p>Average Price of Items:</br>$<%= @average_item_price %>
-            </p>
-            <p>Most Recent Item:</br><%= @recent_item %>
-            </p>
-            <p>Least Recent Item:</br><%= @oldest_item %>
-            </p>
+            <h1>Category Analytics</h1>
+            <div class="table">
+            <table>
+              <tr>
+                <th>Category Name</th>
+                <th>Avg Price of Items</th>
+              </tr>
+              <% @categories.each do |category| %>
+                <tr>
+                  <td>
+                    <%= category.name %>:
+                  </td>
+                  <td>
+                    $<%= category.average_price %>
+                  </td>
+                </tr>
+              <% end %>
+            </table>
+          </div>
+            <p>Category with Most Expensive Item:</br><%= @category_with_most_expensive_item %></p>
+            <p>Category with Least Expensive Item:</br><%= @category_with_least_expensive_item %></p>
           </div>
         </div>
       </div>

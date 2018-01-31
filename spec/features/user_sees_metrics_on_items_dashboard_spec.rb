@@ -1,5 +1,3 @@
-require 'spec_helper'
-
 describe "user visits items dashboard" do
   it "sees item count" do
     Item.create!(name: "apple", description: "yum", unit_price: 20, merchant_id: 123)
