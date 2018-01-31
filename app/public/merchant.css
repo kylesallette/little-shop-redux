@@ -2,9 +2,12 @@ body {
 
        background-color:black;
        width: 100%;
+       margin: 0;
 
 
   }
+
+
 
 th {
   border: 1px solid black;
@@ -272,3 +275,5 @@ text-align: center;
  .link-button {
    padding: 7px;
  }
+
+ 
