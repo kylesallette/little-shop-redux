@@ -6,7 +6,7 @@
   </head>
   <body>
     <header>
-      <img src="https://i.imgur.com/WvrLpTj.jpg" alt="banner" height="300px" width="100%">
+      <img src="https://i.imgur.com/ZyZhR2j.jpg" alt="banner" height="300px" width="100%">
     </header>
     <div class="nav"  width="100px">
       <div class="navbar">
@@ -16,10 +16,10 @@
             <i class="la la bub"></i>
           </button>
           <div class="dropdown-content" id="drop-down">
-            <a href="/merchants/new">Create Merchant</a>
-            <a href="/merchants/edit_input">Edit Merchant</a>
+            <a href="/merchants/new">Create a New Merchant</a>
+            <a href="/merchants/edit_input">Edit a Merchant</a>
             <a href="/merchants">View All Merchants</a>
-            <a href="/merchants/show_input">View Merchant</a>
+            <a href="/merchants/show_input">View a Merchant</a>
             <a href="/merchants-dashboard">Merchant Analytics</a>
           </div>
         </div>
@@ -28,10 +28,10 @@
             <i class="la la bub"></i>
           </button>
           <div class="dropdown-content">
-           <a href="/items/new">Create Item</a>
-           <a href="/items/edit_input">Edit Item</a>
+           <a href="/items/new">Create a New Item</a>
+           <a href="/items/edit_input">Edit an Item</a>
            <a href="/items">View All Items</a>
-           <a href="/items/show_input">View Item</a>
+           <a href="/items/show_input">View an Item</a>
            <a href="/items-dashboard">Item Analytics</a>
          </div>
         </div>
@@ -40,7 +40,7 @@
             <i class="la la bub"></i>
           </button>
           <div class="dropdown-content">
-            <a href="/categories/new">Create Category</a>
+            <a href="/categories/new">Create a New Category</a>
             <a href="/categories/new">View All Categories</a>
             <a href="/categories-dashboard">Category Analytics</a>
           </div>
@@ -49,15 +49,32 @@
       <div class="analytics">
         <div class="merchants">
           <div class="analytics">
-            <h1>Item Analytics</h1>
-            <p>Item Count:</br><%= @item_count %>
-            </p>
-            <p>Average Price of Items:</br>$<%= @average_item_price %>
-            </p>
-            <p>Most Recent Item:</br><%= @recent_item %>
-            </p>
-            <p>Least Recent Item:</br><%= @oldest_item %>
-            </p>
+            <h1>Merchant Analytics</h1>
+              </div>
+                <p>Merchant with Most Items:</br><%= @most_items_id %> <%= @most_items_name %></p>
+                <p>Merchant with the Highest Priced Item:</br><%= @highest_priced_item_id %> <%= @highest_priced_item_name %></p>
+            <div class="table">
+            <table>
+              <tr>
+                <th>Merchant Name</th>
+                <th>Total Number of Items</th>
+                <th>Total Item Price</th>
+              </tr>
+              <% @merchants.each do |merchant| %>
+                <tr>
+                  <td>
+                    <%= merchant.name %>:
+                  </td>
+                  <td>
+                    <%= merchant.item_count %>
+                  </td>
+                  <td>
+                    <%= merchant.total_item_price %>
+                  </td>
+                </tr>
+              <% end %>
+            </table>
+          </div>
           </div>
         </div>
       </div>

@@ -1,13 +1,10 @@
 describe "a user visits merchants edit input page" do
   context "when visit /merchants/edit_input" do
     it "user sees merchant's show page" do
-      visit "/merchants/new"
-      fill_in "number-box", with: "12334105"
-      fill_in "text-box", with: "Example Merchant"
-      click_on("submit-button")
+      merchant = Merchant.create!(name: "ex merch")
 
       visit "/merchants/edit_input"
-      fill_in "merchant_id_text_box", with: "12334105"
+      fill_in "merchant_id_text_box", with: "#{merchant.id}"
       click_on("search-one")
 
       expect(current_path).to eq("/merchants/edit/")
