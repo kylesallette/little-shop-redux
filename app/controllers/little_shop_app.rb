@@ -95,6 +95,7 @@ class LittleShopApp < Sinatra::Base
   end
 
   get "/categories-dashboard" do
+    @categories = Category.all
     @category_with_most_expensive_item = Category.most_expensive_item_category.name
     @category_with_least_expensive_item = Category.least_expensive_item_category.name
     erb :"categories/dashboard"
