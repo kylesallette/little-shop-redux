@@ -41,6 +41,7 @@
           <div class="dropdown-content">
             <a href="/categories/new">Create a New Category</a>
             <a href="/categories">View All Categories</a>
+            <a href="/categories-dashboard">Category Analytics</a>
           </div>
         </div>
       </div>
@@ -49,7 +50,7 @@
              Id   /   <%= @item.id %><br>
           Item  /  <%= @item.name %><br>
           Description  /  <%= @item.description %><br>
-          Unit-price  /  <%= @item.unit_price%><br>
+          Unit-price  /  $<%= (@item.unit_price.to_f) / 100 %><br>
           Merchant-id  /  <%= @item.merchant_id%><br>
         Created-at  /  <%= @item.created_at %><br>
         Updated-at  /  <%= @item.updated_at %><br>
