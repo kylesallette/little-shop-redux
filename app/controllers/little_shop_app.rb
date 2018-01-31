@@ -110,6 +110,8 @@ class LittleShopApp < Sinatra::Base
   end
 
   get "/items/new" do
+     @merchants = Merchant.all
+     @categories = Category.all
     erb :"items/new"
   end
 

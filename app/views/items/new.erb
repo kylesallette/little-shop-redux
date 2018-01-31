@@ -3,6 +3,12 @@
     <title>Little Shop Redux</title>
     <link rel="stylesheet" href="/merchant.css"  type="text/css" />
     <link rel="shortcut icon" href="https://i.imgur.com/dfPcsdI.png" type="image/x-icon" />
+    <script type="text/javascript">
+    function conf()
+    {
+      var con=confirm("You successfully created a new item.");
+    }
+</script>
   </head>
   <body>
     <header>
@@ -45,19 +51,30 @@
         </div>
       </div>
       <div class="new">
-        <form action="/items" method="POST">
-          <p>Enter a new item:</p>
-          Enter item id: <input id="number-box" type="number" name="item[id]"/><br/>
-          Enter a item name: <input id="text-box" type="text" name="item[name]"/><br/>
-          Enter a item description: <input id="text-box" type="text" name="item[description]"/><br/>
-          Enter a item unit-price: <input id="text-box" type="text" name="item[unit_price]"/><br/>
-          Enter a merchant-id: <input id="text-box" type="text" name="item[merchant_id]"/><br/>
-          <input type="hidden" name="merchant[created_at]" value="<%= Time.now %>"/>
-          <input type="hidden" name="merchant[updated_at]" value="<%= Time.now %>"/>
-          <input id="submit-button" type="submit"/>
-        </form>
-      </div>
-      <div class="footer">
+        <p>Enter a new item:</p>
+        <form action="/items" method="post">
+          <select name="item[category_id]">
+          <%@categories.each do |category|%>
+          <option value= "<%=category.id%>"> <%=category.name %> </option>
+          <% end %>
+        </select>
+        <br>
+        <select name="item[merchant_id]">
+        <% @merchants.each do |merchant| %>
+        <option value= "<%=merchant.id%>"> <%=merchant.name %> </option>
+        <% end %>
+      </select>
+      <br>
+      Enter item id:  <input id="number-box" type="number" name="item[id]"/><br/>
+      Enter a item name: <input id="text-box" type="text" name="item[name]"/><br/>
+      Enter a item description: <input id="text-box" type="text" name="item[description]"/><br/>
+      Enter a item unit-price: <input id="text-box" type="text" name="item[unit_price]"/><br/>
+      <input type="hidden" name="merchant[created_at]" value="<%= Time.now %>"/>
+      <input type="hidden" name="merchant[updated_at]" value="<%= Time.now %>"/>
+      <input id="submit-button" onClick="conf()" type="submit" value="Submit"/>
+    </form>
+  </div>
+  <div class="footer">
   </div>
   </body>
 </html>
