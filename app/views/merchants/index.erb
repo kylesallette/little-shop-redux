@@ -55,7 +55,7 @@
           <a class='buttons' href="/merchants/edit/<%= merchant.id  %>">Edit</a>
           <form action="/merchants/<%= merchant.id %>" method="POST">
             <input type="hidden" name="_method" value="DELETE"/>
-            <input type="submit" value="Delete"/>
+            <input id="submit" type="submit" value="Delete"/>
           </form>
           </ul>
         </form>
