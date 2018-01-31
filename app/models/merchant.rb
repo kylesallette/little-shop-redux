@@ -11,8 +11,9 @@ class Merchant < ActiveRecord::Base
   end
 
   def self.highest_priced_item
-    highest_price = Item.maximum(:unit_price)
-    Item.find_by(unit_price: highest_price).merchant
+    joins(:items)
+    .order("unit_price DESC")
+    .first
   end
 
   def item_count
@@ -20,8 +21,6 @@ class Merchant < ActiveRecord::Base
   end
 
   def total_item_price
-    self.items.map do |item|
-      item.unit_price
-    end.sum
+    items.sum(:unit_price)
   end
 end
