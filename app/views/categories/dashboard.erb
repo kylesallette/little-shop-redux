@@ -49,11 +49,10 @@
         <div class="merchants">
           <div class="analytics">
             <h1>Category Analytics</h1>
-            <div class="table">
             <table>
               <tr>
                 <th>Category Name</th>
-                <th>Avg Price of Items</th>
+                <th>Average Price of Items</th>
               </tr>
               <% @categories.each do |category| %>
                 <tr>
@@ -66,7 +65,6 @@
                 </tr>
               <% end %>
             </table>
-          </div>
             <p>Category with Most Expensive Item:</br><%= @category_with_most_expensive_item %></p>
             <p>Category with Least Expensive Item:</br><%= @category_with_least_expensive_item %></p>
           </div>
